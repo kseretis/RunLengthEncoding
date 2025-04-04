@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunLengthEncoding", "RunLengthEncoding.csproj", "{3CBB920E-704F-4106-BF77-56C9712778C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunLengthEncodingTest", "..\RunLengthEncodingTest\RunLengthEncodingTest.csproj", "{1AAAFAA8-3F90-49C1-BDC9-1D9ABCC6E590}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3CBB920E-704F-4106-BF77-56C9712778C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CBB920E-704F-4106-BF77-56C9712778C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CBB920E-704F-4106-BF77-56C9712778C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AAAFAA8-3F90-49C1-BDC9-1D9ABCC6E590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAAFAA8-3F90-49C1-BDC9-1D9ABCC6E590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAAFAA8-3F90-49C1-BDC9-1D9ABCC6E590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAAFAA8-3F90-49C1-BDC9-1D9ABCC6E590}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
