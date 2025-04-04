@@ -1,13 +1,15 @@
-﻿namespace RunLengthEncoding
+﻿using System.Text.RegularExpressions;
+
+namespace RunLengthEncoding.Encoding
 {
     public static class RLE
     {
         public const char Splitter = '|';
-        internal const string RegexPattern = @"\d+\D";
+        private const string RegexPattern = @"\d+\D";
 
         public static string Encode(string text)
         {
-            var encodedText = String.Empty;
+            var encodedText = string.Empty;
             var previousChar = text[0];
             var count = 1;
 
@@ -53,7 +55,7 @@
 
         private static string UpdateEncodedValue(string encodedValue, int count, char character)
         {
-            string text = Char.IsDigit(character)
+            string text = char.IsDigit(character)
                 ? string.Concat(character, Splitter)
                 : character.ToString();
 
@@ -64,7 +66,39 @@
         {
             (char character, int occurences) = textPart.SplitPart();
 
-            return string.Concat(decodedValue, new String(character, occurences));
+            return string.Concat(decodedValue, new string(character, occurences));
+        }
+
+        #endregion
+
+        #region Extensions
+
+        private static string[] SplitText(this string text)
+        {
+            return Regex.Matches(text, RLE.RegexPattern)
+                        .Cast<Match>()
+                        .Select(m => m.Value)
+                        .ToArray();
+        }
+
+        private static (char character, int occurences) SplitPart(this string part)
+        {
+            char character = part.Last();
+
+            if (character.Equals(RLE.Splitter))
+            {
+                part = part.RemoveLastCharacter();
+                character = part.Last();
+            }
+
+            int occurences = int.Parse(part.RemoveLastCharacter());
+
+            return (character, occurences);
+        }
+
+        private static string RemoveLastCharacter(this string text)
+        {
+            return text.Remove(text.Length - 1);
         }
 
         #endregion
