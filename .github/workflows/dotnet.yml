@@ -15,8 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: enter RunLengthEncoding
-      run: cd /RunLengthEncoding
     - uses: actions/checkout@v4
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
